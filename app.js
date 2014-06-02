@@ -8,6 +8,10 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+var nfc = require('nfc'),
+    mifare = require('mifare-classic'),
+    ndef = require('ndef');
+
 var app = express();
 
 // view engine setup
@@ -55,5 +59,12 @@ app.use(function(err, req, res, next) {
     });
 });
 
+var n = new nfc();
+
+n.on('uid', function(uid) {
+    console.log('UID:', uid);
+});
+
+n.start();
 
 module.exports = app;

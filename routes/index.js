@@ -1,5 +1,5 @@
 var express = require('express'),
-	mifare= require('mifare-classic'),
+	mifare = require('mifare-classic'),
 	ndef = require('ndef'),
 	router = express.Router(),
 	message,
