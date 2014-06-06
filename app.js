@@ -64,10 +64,10 @@ var lastUID = '';
 
 n.on('uid', function(uid) {
 	uid = uid.toString('hex');
-	if (UID == uid) {
+	if (lastUID == uid) {
 		return;
 	} else {
-		UID = uid;
+		lastUID = uid;
 		console.log('UID:', uid);
 	}
 });
